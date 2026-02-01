@@ -1,0 +1,215 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║             🦅 KANAEKU TORI BOT - QUICK INSTALLATION GUIDE 🦅             ║
+║                          Version 1.0.1                                    ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📦 INSTALASI DALAM 4 LANGKAH MUDAH
+═══════════════════════════════════════════════════════════════════════════
+
+STEP 1: EXTRACT FILE
+────────────────────────────────────────────────────────────────────────────
+
+Windows:
+  • Klik kanan pada kanaeku-tori-bot.zip
+  • Pilih "Extract All..." atau "Extract Here"
+
+Linux/Mac:
+  unzip kanaeku-tori-bot.zip
+  cd kanaeku-tori-bot
+
+
+STEP 2: SETUP ENVIRONMENT
+────────────────────────────────────────────────────────────────────────────
+
+Linux/Mac:
+  cp .env.example .env
+  nano .env
+
+Windows:
+  copy .env.example .env
+  notepad .env
+
+Edit file .env dan isi:
+┌─────────────────────────────────────────────────────────────────────────┐
+│ BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz     ← Dari @BotFather │
+│ ADMIN_ID=123456789                                  ← Dari @userinfobot│
+│ BOT_NAME=Kanaeku Tori                                                   │
+└─────────────────────────────────────────────────────────────────────────┘
+
+📝 Cara mendapatkan BOT_TOKEN:
+   1. Buka @BotFather di Telegram
+   2. Kirim: /newbot
+   3. Ikuti instruksi
+   4. Copy token yang diberikan
+
+📝 Cara mendapatkan ADMIN_ID:
+   1. Buka @userinfobot di Telegram
+   2. Kirim: /start
+   3. Copy ID Anda
+
+
+STEP 3: INSTALL DEPENDENCIES
+────────────────────────────────────────────────────────────────────────────
+
+  npm install
+
+⏳ Tunggu hingga selesai (±1-2 menit)
+
+
+STEP 4: JALANKAN BOT
+────────────────────────────────────────────────────────────────────────────
+
+Production Mode:
+  npm start
+
+Development Mode (auto-reload):
+  npm run dev
+
+✅ Jika berhasil, Anda akan melihat:
+┌─────────────────────────────────────────────────────────────────────────┐
+│ ✅ Bot is ready!                                                        │
+│ [SUCCESS] Bot is now running as @your_bot_name                          │
+│ [INFO] Listening for commands with prefix: ., /, liona                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 TEST BOT
+═══════════════════════════════════════════════════════════════════════════
+
+Buka bot Anda di Telegram dan coba:
+
+  /start         ← Welcome message
+  .menu          ← Interactive menu
+  .help          ← Bantuan
+  .ping          ← Cek latency
+  .info          ← Info bot
+  .quote         ← Random quote
+  .dice          ← Roll dice
+  .calc 5 + 3    ← Calculator
+
+
+═══════════════════════════════════════════════════════════════════════════
+📚 DOKUMENTASI LENGKAP
+═══════════════════════════════════════════════════════════════════════════
+
+📖 README.md         - Dokumentasi utama
+⚡ QUICKSTART.md     - Quick start guide
+🔧 SETUP_GUIDE.md    - Setup detail
+📜 NPM_SCRIPTS.md    - Daftar npm commands
+🐛 BUGFIX.md         - Bug fixes v1.0.1
+📝 CHANGELOG.md      - Version history
+🔌 API.md            - API reference
+🤝 CONTRIBUTING.md   - Contribution guide
+
+
+═══════════════════════════════════════════════════════════════════════════
+🛠️ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+❌ Error: "BOT_TOKEN is not defined"
+   → Pastikan file .env sudah dibuat dan BOT_TOKEN sudah diisi
+
+❌ Error: "Cannot find module"
+   → Jalankan: npm install
+
+❌ Bot tidak merespon
+   → Cek BOT_TOKEN di .env
+   → Pastikan bot sudah di-start dengan /start di Telegram
+   → Lihat console untuk error
+
+❌ Error: "ETELEGRAM: 401"
+   → BOT_TOKEN salah, generate ulang dari @BotFather
+
+✅ Cek konfigurasi:
+   npm run check
+
+✅ Fresh install:
+   npm run reinstall
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎨 MEMBUAT PLUGIN BARU
+═══════════════════════════════════════════════════════════════════════════
+
+1. Copy file template:
+   cp plugins/_template.js plugins/myplugin.js
+
+2. Edit file plugins/myplugin.js
+
+3. Reload plugin (tanpa restart):
+   .reload  (di Telegram)
+
+4. Test plugin baru:
+   .myplugin
+
+
+═══════════════════════════════════════════════════════════════════════════
+🚀 NPM COMMANDS TERSEDIA
+═══════════════════════════════════════════════════════════════════════════
+
+npm start           - Jalankan bot (production)
+npm run dev         - Jalankan dengan auto-reload
+npm run setup       - Auto setup (install + create .env)
+npm run check       - Validasi konfigurasi
+npm run info        - Tampilkan info bot
+npm run clean       - Hapus node_modules
+npm run reinstall   - Fresh install dependencies
+
+
+═══════════════════════════════════════════════════════════════════════════
+📂 STRUKTUR FOLDER
+═══════════════════════════════════════════════════════════════════════════
+
+kanaeku-tori-bot/
+├── index.js              # Main launcher
+├── package.json          # Dependencies
+├── .env                  # Your configuration (create this!)
+├── .env.example          # Configuration template
+├── src/
+│   └── main.js          # Core system
+├── plugins/             # All bot features
+│   ├── _template.js     # Template untuk plugin baru
+│   ├── start.js         # /start command
+│   ├── menu.js          # Menu interaktif
+│   ├── help.js          # Help system
+│   └── ...              # 11 plugins total
+├── lib/                 # Utilities
+│   ├── database.js
+│   └── logger.js
+└── data/                # Data storage
+
+
+═══════════════════════════════════════════════════════════════════════════
+💡 TIPS
+═══════════════════════════════════════════════════════════════════════════
+
+✅ Gunakan npm run dev saat development
+✅ Backup file .env Anda (jangan commit ke git!)
+✅ Baca README.md untuk dokumentasi lengkap
+✅ Join komunitas untuk bantuan (jika ada)
+✅ Gunakan .reload untuk testing plugin tanpa restart
+
+
+═══════════════════════════════════════════════════════════════════════════
+📞 BANTUAN
+═══════════════════════════════════════════════════════════════════════════
+
+• Baca dokumentasi di folder ini
+• Check GitHub Issues
+• Lihat BUGFIX.md untuk known issues
+• Run: npm run check
+
+
+═══════════════════════════════════════════════════════════════════════════
+✨ SELAMAT MENGGUNAKAN KANAEKU TORI BOT! ✨
+═══════════════════════════════════════════════════════════════════════════
+
+Project: Kanaeku Tori - Modular Telegram Bot
+Version: 1.0.1
+License: MIT
+Built with ❤️ using Node.js
+
+Happy Coding! 🦅

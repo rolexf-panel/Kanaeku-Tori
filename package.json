@@ -1,0 +1,69 @@
+{
+  "name": "kanaeku-tori-bot",
+  "version": "1.0.1",
+  "description": "Pluggable Telegram Bot with modular architecture - Easy to extend, easy to use",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests configured yet\" && exit 0",
+    "setup": "npm install && cp .env.template .env && echo \"✅ Setup complete! Edit .env file and run 'npm start'\"",
+    "clean": "rm -rf node_modules package-lock.json",
+    "reinstall": "npm run clean && npm install",
+    "check": "node -e \"require('dotenv').config(); if(!process.env.BOT_TOKEN) { console.error('❌ BOT_TOKEN not found in .env'); process.exit(1); } console.log('✅ Configuration OK');\"",
+    "info": "node -e \"const pkg = require('./package.json'); console.log('\\n📦 ' + pkg.name + ' v' + pkg.version); console.log('📝 ' + pkg.description + '\\n');\""
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegram-bot",
+    "modular",
+    "pluggable",
+    "nodejs",
+    "plugin-system",
+    "hot-reload",
+    "interactive-bot",
+    "callback-query"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kanaeku-tori-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/kanaeku-tori-bot/issues"
+  },
+  "homepage": "https://github.com/yourusername/kanaeku-tori-bot#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "optionalDependencies": {},
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      "plugins",
+      "lib",
+      "index.js"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "data/*",
+      "node_modules/*"
+    ],
+    "delay": 1000
+  }
+}
