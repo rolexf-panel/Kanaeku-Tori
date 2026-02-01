@@ -1,5 +1,3 @@
-const { config, loadPlugins } = require('../src/main');
-
 module.exports = {
     name: 'reload',
     aliases: ['r', 'refresh'],
@@ -7,6 +5,7 @@ module.exports = {
     description: 'Memuat ulang semua plugin (Admin only)',
     
     async execute(bot, msg, args) {
+        const { config, loadPlugins } = require('../src/main');
         const chatId = msg.chat.id;
         const userId = msg.from.id;
         

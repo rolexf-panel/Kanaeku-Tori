@@ -16,7 +16,7 @@ Selamat datang di *Kanaeku Tori Bot* 🦅
 Bot ini menggunakan arsitektur modular dengan berbagai fitur yang dapat dikustomisasi.
 
 📚 *Cara Menggunakan:*
-Gunakan prefix: \`.', \`/\`, atau \`liona\`
+Gunakan prefix: \`.\`, \`/\`, atau \`liona\`
 Contoh: \`.menu\` atau \`/help\`
 
 💡 *Perintah Utama:*

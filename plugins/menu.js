@@ -1,5 +1,3 @@
-const { commands, categories } = require('../src/main');
-
 module.exports = {
     name: 'menu',
     aliases: ['m', 'commands'],
@@ -7,6 +5,9 @@ module.exports = {
     description: 'Menampilkan menu utama bot',
     
     async execute(bot, msg, args) {
+        // Lazy load to avoid circular dependency
+        const { commands, categories } = require('../src/main');
+        
         const chatId = msg.chat.id;
         
         // Build category buttons
@@ -89,6 +90,7 @@ Klik tombol di bawah untuk melihat detail!
     },
     
     async showCategory(bot, query, category) {
+        const { commands, categories } = require('../src/main');
         const commandList = categories.get(category);
         
         if (!commandList || commandList.length === 0) {
@@ -128,6 +130,7 @@ Klik tombol di bawah untuk melihat detail!
     },
     
     async showAllCommands(bot, query) {
+        const { commands, categories } = require('../src/main');
         let text = '📋 *SEMUA PERINTAH*\n\n';
         
         categories.forEach((commandList, category) => {

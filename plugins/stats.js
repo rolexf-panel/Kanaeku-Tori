@@ -1,5 +1,3 @@
-const { commands, categories } = require('../src/main');
-
 // Simple in-memory stats (in production, use database)
 const stats = {
     commandUsage: new Map(),
@@ -14,6 +12,7 @@ module.exports = {
     description: 'Melihat statistik penggunaan bot',
     
     async execute(bot, msg, args) {
+        const { commands, categories } = require('../src/main');
         const chatId = msg.chat.id;
         
         // Calculate stats

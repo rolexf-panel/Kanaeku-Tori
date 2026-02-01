@@ -1,5 +1,4 @@
 const { version } = require('../package.json');
-const { commands, categories, config } = require('../src/main');
 const os = require('os');
 
 module.exports = {
@@ -9,6 +8,7 @@ module.exports = {
     description: 'Menampilkan informasi tentang bot',
     
     async execute(bot, msg, args) {
+        const { commands, categories, config } = require('../src/main');
         const chatId = msg.chat.id;
         
         // Calculate uptime

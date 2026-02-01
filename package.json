@@ -1,6 +1,6 @@
 {
   "name": "kanaeku-tori-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pluggable Telegram Bot with modular architecture - Easy to extend, easy to use",
   "main": "index.js",
   "scripts": {
@@ -26,18 +26,18 @@
     "callback-query"
   ],
   "author": {
-    "name": "rolexf-panel",
-    "email": "jundibabaji@gmail.com"
+    "name": "Your Name",
+    "email": "your.email@example.com"
   },
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rolexf-panel/Kanaeku-Tori.git"
+    "url": "https://github.com/yourusername/kanaeku-tori-bot.git"
   },
   "bugs": {
-    "url": "https://github.com/rolexf-panel/Kanaeku-Tori/issues"
+    "url": "https://github.com/yourusername/kanaeku-tori-bot/issues"
   },
-  "homepage": "https://github.com/rolexf-panel/Kanaeku-Tori#readme",
+  "homepage": "https://github.com/yourusername/kanaeku-tori-bot#readme",
   "license": "MIT",
   "engines": {
     "node": ">=14.0.0",

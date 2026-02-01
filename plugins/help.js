@@ -1,5 +1,3 @@
-const { commands, config } = require('../src/main');
-
 module.exports = {
     name: 'help',
     aliases: ['h', 'bantuan'],
@@ -7,6 +5,7 @@ module.exports = {
     description: 'Menampilkan bantuan dan informasi perintah',
     
     async execute(bot, msg, args) {
+        const { config } = require('../src/main');
         const chatId = msg.chat.id;
         
         // If specific command requested
@@ -101,6 +100,7 @@ ${cmd.usage ? `*Contoh:*\n${cmd.usage}` : ''}
     },
     
     findCommand(name) {
+        const { commands } = require('../src/main');
         // Check direct command
         if (commands.has(name)) {
             return commands.get(name);
