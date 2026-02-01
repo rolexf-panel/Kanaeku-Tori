@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🦅 Kanaeku Tori - Pluggable Telegram Bot
 
 Sebuah framework Telegram Bot yang modular dan dapat dikustomisasi, dibangun dengan Node.js dan arsitektur plugin.
@@ -308,3 +309,6 @@ Jika menemukan bug atau punya pertanyaan, silakan buat issue atau hubungi develo
 ---
 
 **Dibuat dengan ❤️ menggunakan Node.js dan node-telegram-bot-api**
+=======
+p
+>>>>>>> 037beeaed83c2f462959bdac1ad7d7d45b61234c
