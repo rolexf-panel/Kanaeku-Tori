@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 module.exports = {
     name: 'start',
     aliases: ['mulai', 'begin'],
@@ -7,6 +10,7 @@ module.exports = {
     async execute(bot, msg, args) {
         const chatId = msg.chat.id;
         const userName = msg.from.first_name || 'Pengguna';
+        const mediaPath = path.join(__dirname, '../media/image.jpg');
         
         const welcomeMessage = `
 👋 Halo, *${userName}*!
@@ -28,6 +32,7 @@ Mulai dengan mengetik \`.menu\` untuk melihat semua fitur!
         `.trim();
         
         const options = {
+            caption: welcomeMessage,
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [
@@ -42,6 +47,14 @@ Mulai dengan mengetik \`.menu\` untuk melihat semua fitur!
             }
         };
         
-        await bot.sendMessage(chatId, welcomeMessage, options);
+        try {
+            if (fs.existsSync(mediaPath)) {
+                await bot.sendPhoto(chatId, mediaPath, options);
+            } else {
+                await bot.sendMessage(chatId, welcomeMessage, options);
+            }
+        } catch (e) {
+            await bot.sendMessage(chatId, welcomeMessage, options);
+        }
     }
 };
